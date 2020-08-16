@@ -24,7 +24,7 @@ country_data['Date'] = df_cases_grp.loc[country, '1/22/20':].index
 country_data['Cases'] = df_cases_grp.loc[country, '1/22/20':].values
 country_data['New'] = country_data['Cases'] - country_data['Cases'].shift(1)
 
-print country_data
+print (country_data)
 
 # graph the daily cases (excluding x axis labels)
 plt.bar(country_data['Date'], country_data['New'])
@@ -47,7 +47,7 @@ df_digit['Count'] = [Counter(digits)[number] for number in df_digit['Number']]
 df_digit['Frequency'] = [float(count) / (df_digit['Count'].sum()) for count in df_digit['Count']]
 df_digit['Benford'] = [log10(1 + 1 / float(d)) for d in range(1,10)]
 
-print df_digit
+print (df_digit)
 
 # graph the actual digit frequency
 plt.bar(df_digit['Number'], df_digit['Frequency'], label='Actual')
